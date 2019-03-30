@@ -7,8 +7,16 @@ public class CargoJet extends Jet {
 	public CargoJet() {
 	}
 
-	public CargoJet(String className, String jetName, int cargoVolume, int jetRange, long jetPrice, int jetCargoVolume) {
-		super();
+	public CargoJet(String classname, String model, int speed, int range, long price, int cargoVolume) {
+		super(classname, model, speed, range, price);
+		this.cargoVolume = cargoVolume;
+	}
+
+	public int getCargoVolume() {
+		return cargoVolume;
+	}
+
+	public void setCargoVolume(int cargoVolume) {
 		this.cargoVolume = cargoVolume;
 	}
 
@@ -27,4 +35,10 @@ public class CargoJet extends Jet {
 				+ "Take my watch or the commies will\n" + "But if I die in the Korean mud\n"
 				+ "Bury me with a case of Bud");
 	}
+
+	@Override
+	public String toString() {
+		return getClassName() + ", Model: " + getModel() + ", Speed " + getSpeed() + ", Range: " + getRange() + ", Price: " + getPrice() + ", " + " Max Cargo Weight : " + cargoVolume + ", time they can fly: " + (getRange() / getSpeed() + " hour(s) ");
+	}
+	
 }

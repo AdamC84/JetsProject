@@ -19,6 +19,14 @@ public abstract class Jet {
 		this.speed = speed;
 		this.range = range;
 		this.price = price;
+
+	}
+	public String getClassName() {
+		return className;
+	}
+
+	public void setClassName(String className) {
+		this.className = className;
 	}
 
 	public String getModel() {
@@ -53,17 +61,9 @@ public abstract class Jet {
 		this.price = price;
 	}
 
-	public String getClassName() {
-		return className;
-	}
-
-	public void setClassName(String className) {
-		this.className = className;
-	}
-
 	@Override
 	public String toString() {
-		return "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
+		return  " " + model + "with an air speed of: " + speed + " mph, range is: " + range + " miles, price is:" + price + ";";
 	}
 
 }

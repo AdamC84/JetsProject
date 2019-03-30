@@ -3,9 +3,6 @@ package com.skillsdistillery.jets.app;
 import java.util.Scanner;
 
 import com.skillsdistillery.jet.models.Airfield;
-import com.skillsdistillery.jet.models.CargoJet;
-import com.skillsdistillery.jet.models.FighterJet;
-import com.skillsdistillery.jet.models.Jet;
 
 public class JetApp {
 
@@ -17,11 +14,13 @@ public class JetApp {
 	}
 
 	public void run() {
+		airfield = new Airfield();
+		airfield.sortJets();
 		displayUserMenu();
 
 	}
 
-	public int displayUserMenu() {
+	public void displayUserMenu() {
 		Scanner kb = new Scanner(System.in);
 		boolean listPower = true;
 		int input;
@@ -36,13 +35,17 @@ public class JetApp {
 			System.out.println("8. Remove a jet from Fleet");
 			System.out.println("9. Quit");
 			System.out.print("Please enter a choice: ");
-			input = kb.nextInt();
-			return input;
-
-	public void runMethods(int input) {
+			try {
+				input = kb.nextInt();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				System.out.println("That was not a valid entry.");
+				continue;
+			}
 
 			switch (input) {
 			case 1:
+				airfield.listJets();
 				break;
 			case 2:
 				airfield.flyMethod();
@@ -54,15 +57,16 @@ public class JetApp {
 				airfield.longestRange();
 				break;
 			case 5:
+				airfield.loadAllCargoJets();
 				break;
 			case 6:
-
+				airfield.dogFight();
 				break;
 			case 7:
-//				addJet();
+				userAddJet();
 				break;
 			case 8:
-//				removeJet();
+				removeJet();
 				break;
 			case 9:
 				System.out.println("God Speed!");
@@ -73,7 +77,65 @@ public class JetApp {
 				break;
 			}
 
-	}while(listPower);kb.close();
-
-
+		} while (listPower);
+		kb.close();
+	}
+	public void userAddJet() {
+		Scanner kb = new Scanner(System.in);
+		String model;
+		int speed, range, weaponPkgWeight, cargoWeight = 0;
+		long price;
+		System.out.println("What kind of jet would you like to create (Fighter or Cargo?");
+		String choice = kb.nextLine();
+		
+		try {
+			if (choice.equalsIgnoreCase("Fighter")) {
+				System.out.println("Please enter the model: ");
+				model = kb.next();
+				System.out.println("Please enter the speed: ");
+				speed = kb.nextInt();
+				System.out.println("Please enter the range: ");
+				range = kb.nextInt();
+				System.out.println("Please enter the price: ");
+				price = kb.nextLong();
+				System.out.println("Please enter the weapon package weight: ");
+				weaponPkgWeight = kb.nextInt();
+				airfield.addFighterToList(model, speed, range, price, weaponPkgWeight);
+				
+			}
+			else if (choice.equalsIgnoreCase("Cargo")) {
+				System.out.println("Please enter the model: ");
+				model = kb.next();
+				System.out.println("Please enter the price: ");
+				speed = kb.nextInt();
+				System.out.println("Please enter the speed: ");
+				range = kb.nextInt();
+				System.out.println("Please enter the range: ");
+				price = kb.nextLong();
+				System.out.println("Please enter the cargo weight: ");
+				weaponPkgWeight = kb.nextInt();
+				airfield.addCargoJetToList(model, speed, range, price, cargoWeight);
+				
+			}
+			else {
+				System.out.println("Invalid type entered.");
+			}
+		} catch (Exception e) {
+			System.out.println("Invalid Jet entry.");
+		}
+	}
+	public void removeJet() {
+		Scanner kb = new Scanner(System.in);
+		int choice;
+		airfield.listJets();
+		System.out.println("Which number jet would you like to remove? ");
+		try {
+			choice = kb.nextInt();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println("Jet not found.");
+			return;
+		}
+		airfield.removeTheJet(choice);
+	}
 }
