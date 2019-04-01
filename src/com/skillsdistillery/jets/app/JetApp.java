@@ -80,6 +80,7 @@ public class JetApp {
 		} while (listPower);
 		kb.close();
 	}
+
 	public void userAddJet() {
 		Scanner kb = new Scanner(System.in);
 		String model;
@@ -87,7 +88,7 @@ public class JetApp {
 		long price;
 		System.out.println("What kind of jet would you like to create (Fighter or Cargo?");
 		String choice = kb.nextLine();
-		
+
 		try {
 			if (choice.equalsIgnoreCase("Fighter")) {
 				System.out.println("Please enter the model: ");
@@ -101,9 +102,8 @@ public class JetApp {
 				System.out.println("Please enter the weapon package weight: ");
 				weaponPkgWeight = kb.nextInt();
 				airfield.addFighterToList(model, speed, range, price, weaponPkgWeight);
-				
-			}
-			else if (choice.equalsIgnoreCase("Cargo")) {
+
+			} else if (choice.equalsIgnoreCase("Cargo")) {
 				System.out.println("Please enter the model: ");
 				model = kb.next();
 				System.out.println("Please enter the price: ");
@@ -115,15 +115,15 @@ public class JetApp {
 				System.out.println("Please enter the cargo weight: ");
 				weaponPkgWeight = kb.nextInt();
 				airfield.addCargoJetToList(model, speed, range, price, cargoWeight);
-				
-			}
-			else {
+
+			} else {
 				System.out.println("Invalid type entered.");
 			}
 		} catch (Exception e) {
 			System.out.println("Invalid Jet entry.");
 		}
 	}
+
 	public void removeJet() {
 		Scanner kb = new Scanner(System.in);
 		int choice;
