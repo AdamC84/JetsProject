@@ -28,7 +28,7 @@ public class Airfield {
 			while ((line = br.readLine()) != null) {
 				String[] stringLine = line.split(", ");
 //				sortJets(stringLine);
-				System.out.println(stringLine[0].toString());
+//				System.out.println(stringLine[0].toString());
 
 //				System.out.println(jetList);
 
@@ -40,9 +40,9 @@ public class Airfield {
 					long price = Long.parseLong(stringLine[4]);
 					int cargoVolume = Integer.parseInt(stringLine[5]);
 					CargoJet cj = new CargoJet(className, model, speed, range, price, cargoVolume);
-					System.out.println(cargoVolume);
+//					System.out.println(cargoVolume);
 					jetList.add(cj);
-					System.out.println(jetList);
+//					System.out.println(jetList);
 				} else if (stringLine[0].equals("FighterJet")) {
 					String fclassName = stringLine[0];
 					String fjetName = stringLine[1];

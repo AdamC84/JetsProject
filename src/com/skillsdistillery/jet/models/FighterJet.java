@@ -29,7 +29,7 @@ public class FighterJet extends Jet {
 
 
 	public void fightMode() {
-		System.out.println(getModel() +" DIE COMMIE BASTARD!!");
+		System.out.println(getModel() +"   DIE COMMIE BASTARD!!");
 		System.out.println("MERICA!!");
 	}
 
