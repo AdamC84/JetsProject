@@ -1,6 +1,6 @@
 package com.skillsdistillery.jet.models;
 
-public class FighterJet extends Jet {
+public class FighterJet extends Jet implements Fighter {
 
 	private int weaponPkgWeight;
 
@@ -14,6 +14,10 @@ public class FighterJet extends Jet {
 
 
 
+	/* (non-Javadoc)
+	 * @see com.skillsdistillery.jet.models.Fighter#getWeaponPkgWeight()
+	 */
+	@Override
 	public int getWeaponPkgWeight() {
 		return weaponPkgWeight;
 	}
@@ -21,6 +25,10 @@ public class FighterJet extends Jet {
 
 
 
+	/* (non-Javadoc)
+	 * @see com.skillsdistillery.jet.models.Fighter#setWeaponPkgWeight(int)
+	 */
+	@Override
 	public void setWeaponPkgWeight(int weaponPkgWeight) {
 		this.weaponPkgWeight = weaponPkgWeight;
 	}
@@ -28,6 +36,10 @@ public class FighterJet extends Jet {
 
 
 
+	/* (non-Javadoc)
+	 * @see com.skillsdistillery.jet.models.Fighter#fightMode()
+	 */
+	@Override
 	public void fightMode() {
 		System.out.println(getModel() +"   DIE COMMIE BASTARD!!");
 		System.out.println("MERICA!!");

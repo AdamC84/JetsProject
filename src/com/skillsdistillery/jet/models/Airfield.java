@@ -140,16 +140,16 @@ public class Airfield {
 
 	public void loadAllCargoJets() {
 		for (Jet jets : jetList) {
-			if (jets instanceof CargoJet) {
-				((CargoJet) jets).loadCargo();
+			if (jets instanceof CargoCarrier) {
+				((CargoCarrier) jets).loadCargo();
 			}
 		}
 	}
 
 	public void dogFight() {
 		for (Jet jets : jetList) {
-			if (jets instanceof FighterJet) {
-				((FighterJet) jets).fightMode();
+			if (jets instanceof Fighter) {
+				((Fighter) jets).fightMode();
 			}
 		}
 

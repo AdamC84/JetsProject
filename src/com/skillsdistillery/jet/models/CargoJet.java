@@ -1,6 +1,6 @@
 package com.skillsdistillery.jet.models;
 
-public class CargoJet extends Jet {
+public class CargoJet extends Jet implements CargoCarrier {
 
 	private int cargoVolume;
 
@@ -12,14 +12,26 @@ public class CargoJet extends Jet {
 		this.cargoVolume = cargoVolume;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.skillsdistillery.jet.models.CargoCarrier#getCargoVolume()
+	 */
+	@Override
 	public int getCargoVolume() {
 		return cargoVolume;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.skillsdistillery.jet.models.CargoCarrier#setCargoVolume(int)
+	 */
+	@Override
 	public void setCargoVolume(int cargoVolume) {
 		this.cargoVolume = cargoVolume;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.skillsdistillery.jet.models.CargoCarrier#loadCargo()
+	 */
+	@Override
 	public void loadCargo() {
 		System.out.println("C-130 Rollin’ Down the Strip\n" + "C-130 rollin’ down the strip\n"
 				+ "64 Rangers on a one-way trip\n" + "Mission Top Secret, destination unknown\n"
