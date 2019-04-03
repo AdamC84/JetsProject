@@ -43,8 +43,8 @@ public class CargoJet extends Jet implements CargoCarrier {
 				+ "But if my main don’t open wide\n" + "I got a reserve by my side\n"
 				+ "But if that one should fail me too\n" + "Look out below I’m a-comin’ through\n" + "\n"
 				+ "If I die on the old drop zone\n" + "Box me up and ship me home\n" + "Pin my wings upon my chest\n"
-				+ "And then bury me in the leaning rest\n" + "\n" + "Well if I die on a Chinese hill\n"
-				+ "Take my watch or the commies will\n" + "But if I die in the Korean mud\n"
+				+ "And then bury me in the leaning rest\n" + "\n" + "Well if I die on a Big'ol hill\n"
+				+ "Take my watch or the someone will\n" + "But if I die in the dark mud\n"
 				+ "Bury me with a case of Bud");
 	}
 
